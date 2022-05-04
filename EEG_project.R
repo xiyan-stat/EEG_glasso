@@ -1,9 +1,3 @@
-#################################################################
-#                     Math 9880 Final Project                   #
-#                           R  code                             #
-#      Group: Jiajing Niu, Xiyan Tan, Feng Gao, Jingjing Wang   #
-#################################################################
-
 ############################################################
 # Some functions used in the project
 ############################################################
@@ -464,15 +458,15 @@ grid.arrange(p1, p2, p3, nrow = 1)
 library(rgl)
 library(eegkit)
 library(eegkitdata)
-# Note: since the data are very big, we extracted them on Palmetto 
+# Note: since the data are very large, extracted them on Palmetto 
 # #(1)# download the eeg_full data from UCI Machine Learning Repository
 #  https://archive.ics.uci.edu/ml/datasets/eeg+database
 # #(2)# extract condition "S1" and save as .rda
-eegS1 = geteegdata(indir="/home/xtan/9880ML/project/eeg_full/", cond="S1",filename="eegfullS1")
+eegS1 = geteegdata(indir="~/eeg_full/", cond="S1",filename="eegfullS1")
 # #(3)# extract condition "S2m" and save as .rda
-eegS2m = geteegdata(indir="/home/xtan/9880ML/project/eeg_full/",cond="S2m",filename="eegfullS2m")
+eegS2m = geteegdata(indir="~/eeg_full/",cond="S2m",filename="eegfullS2m")
 # #(4)# extract condition "S2n" and save as .rda
-eegS2n = geteegdata(indir="/home/xtan/9880ML/project/eeg_full/",cond="S2n",filename="eegfullS2n")
+eegS2n = geteegdata(indir="~/eeg_full/",cond="S2n",filename="eegfullS2n")
 # #(5)# combine conditions
 eegdata = rbind(eegS1,eegS2m,eegS2n)
 # types of each variable
@@ -482,7 +476,7 @@ summary(eegdata$time)  #256: 0-255
 levels(eegdata$subject) #122
 
 ########################################################
-#  We consider the average of all trials 
+#  consider the average of all trials 
 # for each subject under the single stimulus conditions
 ########################################################
 # Data :eegS1
